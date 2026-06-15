@@ -8,9 +8,10 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    user-select: none;
 }
 body{
-    background-color: red;
+    background-color: #ffcc8e;
 }
 .home-screen{
     width:100%;
@@ -37,7 +38,7 @@ body{
     z-index: 1;
     width:90px;
     height:90px;
-    background-color: red;
+    background-color: #2B1800;
     position: absolute;
 }
 .play{
@@ -86,13 +87,20 @@ main{
 .box{
     width:70px;
     height:70px;
-    background-color: red;
+    background-color: #2B1800;
     box-shadow:inset 2px 2px 2px white;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 0.8rem;
+    font-weight: 600;
     position: absolute;
     /* left: 100%; */
-    left: calc(27% - 80px);
-    top: calc(19% - 80px);
+}
+.box p{
+    cursor: default;
 }
 .box:hover{
     border: 1px dashed white;
