@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandering Box</title>
+    <link rel="stylesheet" href="play.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="/playnowBtn/style.css"> -->
+</head>
+<body>
+<div class="home-screen">
+    <h1>Wandering Box</h1>
+    <div class="home-box"></div>
+    <button class="play gameButton">
+        
+        <a href="#">Play Now</a>
+    </button>
+</div>
+    <main>
+        <div class="text">
+            <p>Timer : <span class="timer">0</span></p>
+            <p>Score : <span class="score">0</span></p>
+        </div>
+        <div class="gameArea">
+            <div class="box"></div>
+        </div>
+        <button class="start gameButton">
+            <a href="#">START</a>
+        </button>
+    </main>
+    <div class="game-over">
+        <h1>GAME OVER</h1>
+        <p>Score : <span class="pointsScored"></span></p>
+        <button class="restart">RESTART GAME</button>
+        <p>returning to main screen in <span class="returning-counter">5</span>...</p>
+    </div>
+        <script src="script.js"></script>
+</body>
+</html>
