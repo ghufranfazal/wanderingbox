@@ -17,6 +17,8 @@ let returningText = 5;
 const wanderBox = function (boxColor,boxName) {
   let rY = Math.floor(Math.random() * (100 - 19 + 1)) + 19;
   let rX = Math.floor(Math.random() * (100 - 27 + 1)) + 27;
+
+  
   boxName.style.top = `calc(${rY}% - 80px)`;
   boxName.style.left = `calc(${rX}% - 80px)`;
 
