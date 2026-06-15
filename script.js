@@ -10,6 +10,8 @@ const homeBox = document.querySelector(".home-box");
 const play = document.querySelector(".play");
 const gameArea = document.querySelector('.gameArea')
 const timer = document.querySelector(".timer");
+const goHome = document.querySelector('.goHome')
+
 let time = 0;
 let scoreValue = 0;
 let returningText = 5;
@@ -97,3 +99,9 @@ box.addEventListener("click", () => {
 restart.addEventListener("click", () => {
   location.reload();
 });
+
+
+goHome.addEventListener('click',()=>{
+    homeScreen.style.display = "flex"
+    // clearInterval(gameInterval)
+})
