@@ -10,11 +10,12 @@ const homeBox = document.querySelector(".home-box");
 const play = document.querySelector(".play");
 const gameArea = document.querySelector('.gameArea')
 const timer = document.querySelector(".timer");
-const goHome = document.querySelector('.goHome')
+// const goHome = document.querySelector('.goHome')
 
 let time = 0;
 let scoreValue = 0;
 let returningText = 5;
+// let boxClicked = false;
 
 const wanderBox = function (boxColor, boxName) {
     if(boxName==="box"){
@@ -92,8 +93,8 @@ start.addEventListener("click", () => {
 //===================
 
 box.addEventListener("click", () => {
-  scoreValue += 1;
-  score.textContent = scoreValue;
+    scoreValue += 1;
+    score.textContent = scoreValue;
 });
 
 restart.addEventListener("click", () => {
@@ -101,7 +102,7 @@ restart.addEventListener("click", () => {
 });
 
 
-goHome.addEventListener('click',()=>{
-    homeScreen.style.display = "flex"
-    // clearInterval(gameInterval)
-})
+// goHome.addEventListener('click',()=>{
+//     homeScreen.style.display = "flex"
+//     // clearInterval(gameInterval)
+// })
