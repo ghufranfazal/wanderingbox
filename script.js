@@ -8,7 +8,7 @@ const pointsScored = document.querySelector(".pointsScored");
 const homeScreen = document.querySelector(".home-screen");
 const homeBox = document.querySelector(".home-box");
 const play = document.querySelector(".play");
-const gameArea = document.querySelector('.gameArea')
+const gameArea = document.querySelector(".gameArea");
 const timer = document.querySelector(".timer");
 // const goHome = document.querySelector('.goHome')
 
@@ -18,25 +18,21 @@ let returningText = 5;
 // let boxClicked = false;
 
 const wanderBox = function (boxColor, boxName) {
-    if(boxName==="box"){
-        let mainH = gameArea.clientHeight - boxName.offsetHeight;
-        let mainW = gameArea.clientWidth - boxName.offsetWidth;
+  if (boxName === "box") {
+    let mainH = gameArea.clientHeight - boxName.offsetHeight;
+    let mainW = gameArea.clientWidth - boxName.offsetWidth;
 
-        const rY = Math.random() * mainH;
-        const rX = Math.random() * mainW;
-        boxName.style.top = `${rY}px`;
-        boxName.style.left = `${rX}px`;
-    }else{
+    const rY = Math.random() * mainH;
+    const rX = Math.random() * mainW;
+    boxName.style.top = `${rY}px`;
+    boxName.style.left = `${rX}px`;
+  } else {
+    let rY = Math.floor(Math.random() * (100 - 19 + 1)) + 19;
+    let rX = Math.floor(Math.random() * (100 - 27 + 1)) + 27;
 
-          let rY = Math.floor(Math.random() * (100 - 19 + 1)) + 19;
-          let rX = Math.floor(Math.random() * (100 - 27 + 1)) + 27;
-        
-        
-          boxName.style.top = `calc(${rY}% - 80px)`;
-          boxName.style.left = `calc(${rX}% - 80px)`;
-    }
-
-
+    boxName.style.top = `calc(${rY}% - 80px)`;
+    boxName.style.left = `calc(${rX}% - 80px)`;
+  }
 
   boxName.style.backgroundColor = boxColor;
 };
@@ -49,12 +45,15 @@ const randomColor = function () {
   return `rgb(${r},${g},${b})`;
 };
 if (homeScreen.style.display != "none") {
-  setInterval(() => {
+  var homeBoxInterval = setInterval(() => {
     wanderBox(randomColor(), homeBox);
   }, 900);
 }
+
 play.addEventListener("click", () => {
   homeScreen.style.display = "none";
+  clearInterval(homeBoxInterval);
+  console.log("play button clicked");
 });
 
 start.addEventListener("click", () => {
@@ -91,16 +90,24 @@ start.addEventListener("click", () => {
 //===================
 //     BOX CLICK
 //===================
+// while(timer.textContent==0){
+
+// }
 
 box.addEventListener("click", () => {
+  if (timer.textContent == 0) {
+    console.log("Timer is 0 and box clicked");
+    score.textContent = "0";
+  } else {
     scoreValue += 1;
     score.textContent = scoreValue;
+    console.log("Timer is not zero and box clicked");
+  }
 });
 
 restart.addEventListener("click", () => {
   location.reload();
 });
-
 
 // goHome.addEventListener('click',()=>{
 //     homeScreen.style.display = "flex"
